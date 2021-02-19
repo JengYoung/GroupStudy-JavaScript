@@ -42,11 +42,13 @@ function checkCorrectWord(wordArr, val) {
     return true;
 }
 
+//게임을 초기화한다.
 function GameInitialization() {
     wordArr = [];
     printLastWord();
 }
 
+// event 발생시 input값을 다룬다.
 function inputValueHandler (e) {
     const check = checkCorrectWord(wordArr,input.value);
     if (!check) {
@@ -59,6 +61,7 @@ function inputValueHandler (e) {
     input.value = '';
 }
 
+//시작 제시어 설정 및 마지막 단어 출력
 function printLastWord() {
     const arrLength = wordArr.length;
     if (! arrLength) {
@@ -68,6 +71,7 @@ function printLastWord() {
     }
 }
 
+//게임 시작
 function Init() {
     console.log(wordArr);
     printLastWord();

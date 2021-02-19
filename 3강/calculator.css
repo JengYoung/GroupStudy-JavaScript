@@ -1,0 +1,117 @@
+:root {
+    /* size */
+    --btn-width: 73px;
+    --btn-height: 50px;
+    
+    /* color */
+    --btn-color: rgb(250, 239, 239);
+    --main-color: rgb(121, 218, 248);
+}
+
+/* defautl setting */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    border: 1px solid #acacac;
+    border-radius: 5px;
+    width: var(--btn-width);
+    height: var(--btn-height);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+/*********************** operator setting *************************/
+
+.container {
+    margin-top: 100px;
+    width: 400px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    width: 300px;
+    height: var(--btn-height);
+}
+
+.input-btn {
+    margin: 0;
+    width: calc()
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.operator-box {
+    display: flex;
+    justify-content: space-between;
+}
+.operator {
+    width: calc(var(--btn-width));
+    height: var(--btn-height);
+}
+
+.button-container {
+    width: 100%;
+}
+.operator-box button:first-child {
+    margin-left: 0;
+}
+.operator-box button:last-child {
+    margin-right: 0;
+}
+
+/***************** number-buttons *****************/
+.number-btns {
+    display: grid;
+    flex-wrap:row;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.number {
+    height: var(--btn-width);
+}
+
+.number:nth-child(3n) {
+    background-color: blue;
+}
+
+
+.result-box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description {
+    padding-right: 30px;    
+}
+
+.result-shown {
+    width: 250px;
+    height: 30px;
+    background-color:rgb(121, 218, 248);    
+    border-radius: 5px;
+}
