@@ -64,19 +64,36 @@ button:hover {
     height: 30px;
     background-color:white;    
     height: var(--btn-height);
-    padding: 1px 2px;
 }
 
+.result {
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 550;
+}
 .input-box {
     display: flex;
     justify-content: space-between;
 }
 
 .input {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     border: none;
     outline: none;
     width: 300px;
     height: var(--btn-height);
+    text-align: right;
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+.input::placeholder {
+    font-size: 20px;
+    padding-right: 20px;
 }
 
 .input-btn {

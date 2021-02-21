@@ -53,22 +53,41 @@ substractBtn.addEventListener('click', e => onClickHandler(e));
 multiplyBtn.addEventListener('click', e => onClickHandler(e));
 divideBtn.addEventListener('click', e => onClickHandler(e));
 
+function safeEval(val) {
+    return Function('"use strict";return (' + val + ')')();
+}
+
 function calculate(digits) {
+    const validOptions = ['+', '-', '*', '/', '(', ')', ' ', '.'];
     for (let digit of digits) {
-        if (Number.isNaN(parseInt(digit)) & (digit !== '+') & (digit !== '-') & (digit !== '*') & (digit !== '/') & (digit !== '(') & (digit !== ')') & (digit !== ' ')) {
+        if (Number.isNaN(parseInt(digit)) & (validOptions.indexOf(digit) < 0)) {
             alert('다시 한 번 제대로 입력해주세요.');
             return;
         }
     }
-    return eval(digits);
+    return safeEval(digits);
 }
 
+//inputBnt, initializeBtn
 inputBtn.addEventListener('click', () => {
     const inputValue = input.value;
-    result.innerText = calculate(inputValue);
+    const returnValue = calculate(inputValue);
+    result.innerText = returnValue;
+    if (Number.isNaN(parseInt(returnValue))) {
+        input.value = null; //NaN, infinity 등 오류 방지.
+    } else {
+        input.value = returnValue;
+    }
 })
 
-/******************************** Event Handler ************************************/
+initializeBtn.addEventListener('click', () => {
+    input.value = null;
+    result.innerText = null;
+})
+
+
+
+/******************************** Initialization Setting ************************************/
 function Init() {
 
 }
