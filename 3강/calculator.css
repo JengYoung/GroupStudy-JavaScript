@@ -52,10 +52,6 @@ button:hover {
     vertical-align: middle;
 }
 
-.description {
-    padding-right: 30px;    
-}
-
 .result-box {
     display: flex;
     justify-content: center;

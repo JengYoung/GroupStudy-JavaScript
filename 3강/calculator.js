@@ -54,16 +54,17 @@ multiplyBtn.addEventListener('click', e => onClickHandler(e));
 divideBtn.addEventListener('click', e => onClickHandler(e));
 
 function safeEval(val) {
-    return Function('"use strict";return (' + val + ')')();
+    // return Function('"use strict";return (' + val + ')')();
+    return Function(`"use strict";return (${val})`)();
 }
 
 function calculate(digits) {
     const validOptions = ['+', '-', '*', '/', '(', ')', ' ', '.'];
     for (let digit of digits) {
-        if (Number.isNaN(parseInt(digit)) & (validOptions.indexOf(digit) < 0)) {
+        if (Number. (parseInt(digit)) & (validOptions.indexOf(digit) < 0)) {
             alert('다시 한 번 제대로 입력해주세요.');
             return;
-        }
+        } 
     }
     return safeEval(digits);
 }
