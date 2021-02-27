@@ -39,7 +39,7 @@ function getRandom(answer) {
     return randomNum;
 }
 
-/************************* eventListenr ***************************/
+/************************* eventListener ***************************/
 startBtn.addEventListener('click', () => {
     initialize();
     for (let i=0; i<4; i++) answer += getRandom(answer);
