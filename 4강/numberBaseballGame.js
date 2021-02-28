@@ -28,21 +28,25 @@ function checkIfCorrect(numbers) {
             else ball++;
         }
         const hint = document.createElement('li');
-        hint.innerText = `${cnt}번째 시도: ${strike}S ${ball}B`;
+        hint.innerText = `${cnt}번째: ${input.value} - ${strike}S ${ball}B`;
         hints.appendChild(hint);
     }
 }
 
-function getRandom(answer) {
-    let randomNum = (parseInt(Math.random()*10)).toString();
-    while (answer.indexOf(randomNum) >= 0) randomNum = (parseInt(Math.random()*10)).toString();
+function createRandomNumber() {
+    return (parseInt(Math.random()*10)).toString()
+}
+
+function getNumber(answer) {
+    let randomNum = createRandomNumber();
+    while (answer.indexOf(randomNum) >= 0) randomNum = createRandomNumber();
     return randomNum;
 }
 
 /************************* eventListener ***************************/
 startBtn.addEventListener('click', () => {
     initialize();
-    for (let i=0; i<4; i++) answer += getRandom(answer);
+    for (let i=0; i<4; i++) answer += getNumber(answer);
 })
 
 inputBtn.addEventListener('click', () => {
@@ -55,4 +59,5 @@ inputBtn.addEventListener('click', () => {
     const val = input.value;
     if (Number(parseInt(val)) && val.length === 4) checkIfCorrect(val);
     else alert("제대로 된 값을 입력해주세요.");
+    input.value = '';
 })

@@ -6,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 li {
     list-style: none;
 }
@@ -35,6 +36,8 @@ li {
     border-top: 1px solid lightgray;
 }
 .hints {
+    padding: 0;
+    text-align: center;
     border: 1px solid lightgray;
     display: block;
     height: 200px;
